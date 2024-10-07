@@ -27,7 +27,7 @@ const recipeSchema = new Schema<IRecipe>(
 // Add any custom methods or statics on the schema here if needed
 recipeSchema.methods.calculateAverageRating = function () {
   const ratings = this.ratings;
-  return ratings.length ? ratings.reduce((sum, rating) => sum + rating, 0) / ratings.length : 0;
+  return ratings.length ? ratings.reduce((sum : number, rating : number) => sum + rating, 0) / ratings.length : 0;
 };
 
 // Export the model
