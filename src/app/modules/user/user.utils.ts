@@ -1,19 +1,21 @@
-import jwt from "jsonwebtoken";
-import { Types } from "mongoose";
+import jwt from 'jsonwebtoken';
+import { Types } from 'mongoose';
+
+export type JwtPayload = {
+  _id: Types.ObjectId; 
+  name: string;
+  email: string;
+  phone?: string;
+  imageUrl?: string; 
+  role: 'user' | 'admin'; 
+  address?: string; 
+};
 
 export const createToken = (
-  jwtPayload: {
-    _id: Types.ObjectId;
-    name: string;
-    email: string;
-    phone: string;
-    imageUrl: string;
-    role: string;
-    address: string;
-  },
+  jwtPayload: JwtPayload, 
   secret: string,
   expiresIn: string,
-) => {
+): string => {
   return jwt.sign(jwtPayload, secret, {
     expiresIn,
   });
