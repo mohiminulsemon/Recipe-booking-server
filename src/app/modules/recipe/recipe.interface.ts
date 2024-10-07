@@ -8,8 +8,8 @@ export interface IRecipe {
   description: string;
   image: string;
   ingredients: string[];
-  cookingTime: number; // in minutes
-  tags: string[]; // e.g., "vegetarian", "gluten-free"
+  cookingTime: number; 
+  tags: string[]; 
   ratings: number[];
   comments: Types.ObjectId[];
   upvotes: number;
@@ -40,9 +40,9 @@ export interface IRecipeUpdate {
 export interface IRecipeFilter {
   name?: string;
   title?: string;
-  ingredients?: string[]; // Search recipes containing any of these ingredients
+  ingredients?: string[]; 
   minCookingTime?: number;
   maxCookingTime?: number;
   tags?: string[];
-  keyword?: string; // Search by any keyword in name, title, or description
+  keyword?: string; 
 }
